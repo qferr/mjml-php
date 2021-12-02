@@ -46,7 +46,7 @@ class BinaryRenderer implements RendererInterface
         try {
             $process->mustRun();
         } catch (ProcessFailedException $e) {
-            throw new \RuntimeException('Unable to compile MJML. Stack error: '.$e->getMessage());
+            throw new \RuntimeException('Unable to compile MJML. Stack error: ' . $e->getMessage());
         }
 
         return $process->getOutput();
