@@ -35,7 +35,7 @@ class ApiRenderer implements RendererInterface
      *
      * @var string
      */
-    const BASE_URI = "https://api.mjml.io/v1/";
+    private const BASE_URI = "https://api.mjml.io/v1/";
 
     /**
      * ApiRenderer constructor.
