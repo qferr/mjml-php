@@ -1,6 +1,8 @@
 MJML in PHP
 ===========
 
+![PHPUnit](https://github.com/qferr/mjml-php/actions/workflows/php.yml/badge.svg)
+
 A simple PHP library to render MJML to HTML.
 
 There are two ways for integrating MJML in PHP:
