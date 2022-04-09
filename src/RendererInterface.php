@@ -1,6 +1,6 @@
 <?php
 
-namespace Qferrer\Mjml\Renderer;
+namespace Qferrer\Mjml;
 
 /**
  * Interface RendererInterface
@@ -8,7 +8,7 @@ namespace Qferrer\Mjml\Renderer;
 interface RendererInterface
 {
     /**
-     * Renderer MJML to HTML content
+     * Renders MJML to HTML content.
      *
      * @param string $content The MJML content
      *
