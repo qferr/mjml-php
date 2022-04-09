@@ -29,5 +29,10 @@
     },
     "scripts": {
         "test": "phpunit tests/"
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.30"
+        }
     }
 }
