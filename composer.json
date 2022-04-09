@@ -2,6 +2,7 @@
     "name": "qferr/mjml-php",
     "description": "A simple PHP library to render MJML to HTML.",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Quentin",
@@ -25,5 +26,8 @@
         "psr-4": {
             "Qferrer\\Tests\\Mjml\\" : "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit tests/"
     }
 }
