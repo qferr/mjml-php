@@ -24,5 +24,8 @@
         "psr-4": {
             "Qferrer\\Tests\\" : "tests/"
         }
+    },
+    "scripts": {
+        "test": "phpunit tests/"
     }
 }
