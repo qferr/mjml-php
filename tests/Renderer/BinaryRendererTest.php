@@ -23,7 +23,7 @@ class BinaryRendererTest extends TestCase
     public function testRenderWithInvalidBinaryThrowException()
     {
         $this->expectException(ProcessException::class);
-        $this->expectExceptionMessage('unknown: command not found');
+        $this->expectExceptionMessage('unknown');
 
         $renderer = new BinaryRenderer('unknown');
         $renderer->render($this->loadResource('hello_world.mjml'));
