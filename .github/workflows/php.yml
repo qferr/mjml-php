@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHPUnit
 
 on: ['push']
 
@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php-versions: ['7.2', '7.3', '7.4']
+        php-versions: ['7.2', '7.3', '7.4', '8.0', '8.1']
 
     steps:
     - uses: actions/checkout@v3
@@ -45,7 +45,7 @@ jobs:
           ${{ runner.os }}-php-
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      run: composer update --no-interaction --no-scripts --no-progress
 
     - name: Run test suite
       run: composer run-script test
