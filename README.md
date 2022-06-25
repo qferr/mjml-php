@@ -1,13 +1,13 @@
-MJML in PHP
-===========
+# MJML in PHP
 
 ![PHPUnit](https://github.com/qferr/mjml-php/actions/workflows/php.yml/badge.svg)
 
 A simple PHP library to render MJML to HTML.
 
 There are two ways for integrating MJML in PHP:
-* using the MJML API
-* using the MJML library
+
+- using the MJML API
+- using the MJML library
 
 ### Installation
 
@@ -29,7 +29,7 @@ If you want a specific version, use the following syntax: `npm install mjml@4.7.
 <?php
 require_once 'vendor/autoload.php';
 
-$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(__DIR__ . '/node_modules/.bin/mjml');
+$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer();
 
 $html = $renderer->render('
     <mjml>
