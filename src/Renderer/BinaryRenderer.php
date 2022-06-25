@@ -36,8 +36,9 @@ class BinaryRenderer implements RendererInterface
     /**
      * @inheritDoc
      */
-    public function render(string $content): string
+    public function render(string $content = null): string
     {
+        if (empty($content)) $content = getcwd() . '/node_modules/.bin/mjml';
         $process = new Process($this->command, $content);
         $process->run();
 

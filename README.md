@@ -29,7 +29,7 @@ If you want a specific version, use the following syntax: `npm install mjml@4.7.
 <?php
 require_once 'vendor/autoload.php';
 
-$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer(getcwd() . '/node_modules/.bin/mjml');
+$renderer = new \Qferrer\Mjml\Renderer\BinaryRenderer();
 
 $html = $renderer->render('
     <mjml>
