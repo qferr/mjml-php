@@ -20,6 +20,15 @@ class BinaryRendererTest extends TestCase
         $this->assertEquals($this->loadResource('hello_world.min.html.text'), $html);
     }
 
+    public function testRenderWithCustomArgs()
+    {
+        $renderer = new BinaryRenderer(__DIR__ . '/../../node_modules/.bin/mjml', '');
+
+        $html = $renderer->render($this->loadResource('hello_world.mjml'));
+
+        $this->assertEquals($this->loadResource('hello_world.html.text'), $html);
+    }
+
     public function testRenderWithInvalidBinaryThrowException()
     {
         $this->expectException(ProcessException::class);

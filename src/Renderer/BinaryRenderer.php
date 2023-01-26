@@ -26,11 +26,24 @@ class BinaryRenderer implements RendererInterface
      * BinaryRenderer constructor.
      *
      * @param string $bin
+     * @param string $args
      */
-    public function __construct(string $bin)
+    public function __construct(string $bin, string $args = '--config.validationLevel --config.minify')
     {
         $this->bin = $bin;
-        $this->command = "{$this->bin} -i -s --config.validationLevel --config.minify";
+        $this->setArgs($args);
+    }
+
+    /**
+     * Set arguments used to run mjml.
+     *
+     * @link https://documentation.mjml.io/#command-line-interface
+     * @param string $args
+     * @return void
+     */
+    public function setArgs(string $args): void
+    {
+        $this->command = "{$this->bin} -i -s {$args}";
     }
 
     /**
