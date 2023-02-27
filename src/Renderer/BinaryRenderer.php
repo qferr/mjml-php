@@ -31,7 +31,7 @@ class BinaryRenderer implements RendererInterface
      * BinaryRenderer constructor.
      *
      * @param string $bin
-     * @param string $tmpFilePath if set, reads this mjml file and creates a mjml.html file which will be read and return on render
+     * @param string $mjmlFilePath if set, reads this mjml file and creates a mjml.html file which will be read and return on render
      */
     public function __construct(string $bin, string $mjmlFilePath = "")
     {
