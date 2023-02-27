@@ -23,14 +23,25 @@ class BinaryRenderer implements RendererInterface
     private $command;
 
     /**
+     * @var string
+     */
+    private $mjmlFilePath;
+
+    /**
      * BinaryRenderer constructor.
      *
      * @param string $bin
+     * @param string $mjmlFilePath if set, reads this mjml file and creates a mjml.html file which will be read and return on render
      */
-    public function __construct(string $bin)
+    public function __construct(string $bin, string $mjmlFilePath = "")
     {
         $this->bin = $bin;
-        $this->command = "{$this->bin} -i -s --config.validationLevel --config.minify";
+        $this->mjmlFilePath = $mjmlFilePath;
+        if ($mjmlFilePath !== "") {
+            $this->command = "{$this->bin} --config.validationLevel 'skip' --config.minify true {$mjmlFilePath} -o  {$mjmlFilePath}.html";
+        } else {
+            $this->command = "{$this->bin} -i -s --config.validationLevel --config.minify";
+        }
     }
 
     /**
@@ -38,9 +49,17 @@ class BinaryRenderer implements RendererInterface
      */
     public function render(string $content): string
     {
-        $process = new Process($this->command, $content);
-        $process->run();
+        $returnValue = "";
 
-        return $process->getOutput();
+        if ($this->mjmlFilePath !== "") {
+            passthru($this->command);
+            $returnValue = file_get_contents("{$this->mjmlFilePath}.html");
+        } else {
+            $process = new Process($this->command, $content);
+            $process->run();
+            $returnValue = $process->getOutput();
+        }
+
+        return $returnValue;
     }
 }
